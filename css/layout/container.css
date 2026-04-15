@@ -1,0 +1,32 @@
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  padding-inline: var(--container-gutter);
+  margin: 0 auto;
+}
+
+.container--wide {
+  width: 100%;
+  max-width: 1440px;
+  padding-inline: var(--container-gutter);
+  margin: 0 auto;
+}
+
+.stack-lg > * + * {
+  margin-top: var(--space-8);
+}
+
+.stack-md > * + * {
+  margin-top: var(--space-6);
+}
+
+.stack-sm > * + * {
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .container,
+  .container--wide {
+    padding-inline: 20px;
+  }
+}

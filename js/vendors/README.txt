@@ -1,0 +1,1 @@
+// Vendor JavaScript placeholder notes.

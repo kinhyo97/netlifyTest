@@ -1,0 +1,1 @@
+<!-- Project structure guide placeholder. -->

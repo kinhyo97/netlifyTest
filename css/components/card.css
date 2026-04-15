@@ -1,0 +1,40 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-6px);
+  border-color: rgba(91, 108, 255, 0.25);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.card-link::after {
+  content: "\2192";
+  transition: transform 0.2s ease;
+}
+
+.card:hover .card-link::after,
+.card:focus-within .card-link::after {
+  transform: translateX(4px);
+}

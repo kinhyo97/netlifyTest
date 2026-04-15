@@ -1,0 +1,118 @@
+body.is-menu-open {
+  overflow: hidden;
+}
+
+.desktop-guide {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.show-desktop-guide .desktop-guide {
+  opacity: 1;
+}
+
+.desktop-guide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1320px;
+  transform: translateX(-50%);
+  background:
+    repeating-linear-gradient(
+      to right,
+      rgba(255, 82, 82, 0.18) 0,
+      rgba(255, 82, 82, 0.18) 88px,
+      rgba(255, 255, 255, 0) 88px,
+      rgba(255, 255, 255, 0) 112px
+    );
+}
+
+.page-shell {
+  position: relative;
+  min-width: 320px;
+  background:
+    linear-gradient(180deg, rgba(216, 206, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%) top center / 100% 672px no-repeat,
+    var(--color-white);
+}
+
+.section,
+.section--tight {
+  padding: 0;
+}
+
+main > section + section {
+  margin-top: var(--space-12);
+}
+
+.section--dark {
+  color: var(--color-white);
+  background: linear-gradient(180deg, #190708 0%, #24090d 100%);
+}
+
+.section-heading {
+  display: grid;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-accent);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 var(--space-5);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent-strong);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.placeholder-media {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.35), transparent 30%),
+    linear-gradient(135deg, #d8defc 0%, #f7d3e6 50%, #cadbff 100%);
+}
+
+.placeholder-media::after {
+  content: "";
+  position: absolute;
+  inset: auto -15% -30% 35%;
+  height: 70%;
+  border-radius: 50%;
+  background: rgba(17, 17, 17, 0.08);
+  filter: blur(30px);
+}
+
+@media (max-width: 1025px) {
+  .desktop-guide {
+    display: none;
+  }
+
+  main > section + section {
+    margin-top: var(--space-11);
+  }
+}
+
+@media (max-width: 768px) {
+  main > section + section {
+    margin-top: var(--space-10);
+  }
+}
