@@ -2,7 +2,7 @@ body.is-menu-open {
   overflow: hidden;
 }
 
-.desktop-guide {
+/* .desktop-guide {
   position: fixed;
   inset: 0;
   z-index: 9999;
@@ -31,7 +31,7 @@ body.is-menu-open {
     );
   background-size: 425px 100%;
   background-repeat: no-repeat;
-}
+} */
 
 .page-shell {
   position: relative;
@@ -103,11 +103,11 @@ main > section + section {
   filter: blur(30px);
 }
 
-@media (min-width: 1025px) {
+/* @media (min-width: 1025px) {
   .desktop-guide {
     display: none;
   }
-}
+} */
 
 @media (max-width: 1024px) {
   main > section + section {
@@ -122,7 +122,7 @@ main > section + section {
 }
 
 @media (max-width: 375px) {
-  .desktop-guide::before {
+  /* .desktop-guide::before {
     left: calc((100% - 335px) / 2);
     width: 335px;
     background:
@@ -134,7 +134,7 @@ main > section + section {
         rgba(255, 255, 255, 0) 34px
       );
     background-size: 335px 100%;
-  }
+  } */
 
   main > section + section {
     margin-top: 56px;
