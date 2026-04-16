@@ -1,22 +1,96 @@
+.news-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-flow: column;
+  grid-auto-columns: 432px;
   gap: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.news-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.news-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.news-control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #dcdcdc;
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--color-text);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.news-control span {
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+}
+
+.news-control--prev span {
+  transform: rotate(-135deg);
+}
+
+.news-control--next span {
+  transform: rotate(45deg);
+}
+
+.news-control:hover,
+.news-control:focus-visible {
+  background-color: #f7f7fb;
+}
+
+.news-control:disabled {
+  color: #c2c2c2;
+  background-color: #ffffff;
+  cursor: default;
 }
 
 .news-card {
   display: grid;
+  grid-template-rows: 325px 1fr;
   align-content: start;
   gap: 21px;
-  min-height: 504px;
+  width: 432px;
+  height: 504px;
   padding: 16px;
   border-radius: 8px;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+.news-card:hover,
+.news-card:focus-within {
+  transform: none;
   box-shadow: none;
 }
 
 .news-card__media {
   position: relative;
-  height: 284px;
+  height: 100%;
   overflow: hidden;
   border-radius: 8px;
 }
@@ -25,6 +99,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: opacity 0.25s ease;
+}
+
+.news-card:hover .news-card__media img,
+.news-card:focus-within .news-card__media img {
+  opacity: 0.4;
 }
 
 .news-card__copy {
@@ -70,13 +150,30 @@
 }
 
 @media (max-width: 1025px) {
+  .news-header {
+    align-items: center;
+  }
+
   .news-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-columns: 432px;
   }
 }
 
 @media (max-width: 768px) {
+  .news-header {
+    display: grid;
+    gap: 20px;
+  }
+
+  .news-controls {
+    justify-content: flex-end;
+  }
+
   .news-grid {
-    grid-template-columns: 1fr;
+    grid-auto-columns: minmax(280px, 1fr);
+  }
+
+  .news-card {
+    width: 100%;
   }
 }

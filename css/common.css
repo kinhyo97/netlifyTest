@@ -19,22 +19,24 @@ body.is-menu-open {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 50%;
-  width: 1320px;
-  transform: translateX(-50%);
+  left: calc((100% - 425px) / 2);
+  width: 425px;
   background:
     repeating-linear-gradient(
       to right,
       rgba(255, 82, 82, 0.18) 0,
-      rgba(255, 82, 82, 0.18) 88px,
-      rgba(255, 255, 255, 0) 88px,
-      rgba(255, 255, 255, 0) 112px
+      rgba(255, 82, 82, 0.18) 13.4167px,
+      rgba(255, 255, 255, 0) 13.4167px,
+      rgba(255, 255, 255, 0) 37.4167px
     );
+  background-size: 425px 100%;
+  background-repeat: no-repeat;
 }
 
 .page-shell {
   position: relative;
   min-width: 320px;
+  overflow-x: hidden;
   background:
     linear-gradient(180deg, rgba(216, 206, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%) top center / 100% 672px no-repeat,
     var(--color-white);
@@ -101,11 +103,13 @@ main > section + section {
   filter: blur(30px);
 }
 
-@media (max-width: 1025px) {
+@media (min-width: 1025px) {
   .desktop-guide {
     display: none;
   }
+}
 
+@media (max-width: 1024px) {
   main > section + section {
     margin-top: var(--space-11);
   }

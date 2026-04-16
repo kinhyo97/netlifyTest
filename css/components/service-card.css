@@ -10,23 +10,52 @@
   min-height: 305px;
   padding: 28px 32px 28px 28px;
   border-radius: 12px;
-  border-color: #f5f5f5;
+  border: 2px solid #f5f5f5;
+  box-shadow: none;
+}
+
+.service-card:hover,
+.service-card:focus-within {
+  transform: none;
   box-shadow: none;
 }
 
 .service-card__brand {
   display: inline-flex;
   align-items: center;
-  width: fit-content;
+  position: relative;
+  width: 168px;
+  height: 48px;
 }
 
 .service-card__brand img {
   display: block;
   width: auto;
   height: auto;
+  max-width: 100%;
   max-height: 48px;
   object-fit: contain;
   object-position: left center;
+  transition: opacity 0.2s ease;
+}
+
+.service-card__brand::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../../assets/images/confirm_icons/CloudGate_Logo.webp") left center / contain no-repeat;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.service-card:hover .service-card__brand img,
+.service-card:focus-within .service-card__brand img {
+  opacity: 0;
+}
+
+.service-card:hover .service-card__brand::after,
+.service-card:focus-within .service-card__brand::after {
+  opacity: 1;
 }
 
 .service-card__copy {
@@ -56,7 +85,54 @@
 
 @media (max-width: 1025px) {
   .service-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 485px);
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .service-card {
+    width: 485px;
+    min-height: 305px;
+    padding: 28px 28px 32px;
+    gap: 60px;
+    border-radius: 12px;
+  }
+
+  .service-card__body {
+    gap: 60px;
+    align-content: start;
+  }
+
+  .service-card__copy {
+    gap: 8px;
+  }
+
+  .service-card__copy .type-title {
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  .service-card__copy .type-body,
+  .service-card__copy .text-muted {
+    color: #505050;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+  }
+
+  .service-card .card-link {
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  .service-card__brand {
+    width: 168px;
+    height: 48px;
   }
 }
 

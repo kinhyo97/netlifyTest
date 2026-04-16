@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="../css/main.css">
   </head>
   <body class="show-desktop-guide">
-  <body>
-    <!-- <div class="desktop-guide" aria-hidden="true"></div> -->
+    <div class="desktop-guide" aria-hidden="true"></div>
     <div class="page-shell">
       <!-- Header -->
       <header class="site-header" data-header>
@@ -33,9 +32,7 @@
             <button class="site-header__lang" type="button" aria-label="언어 선택">
               <span class="site-header__lang-text">KOR</span>
             </button>
-            <button class="site-header__menu-toggle" type="button" aria-label="메뉴 열기" data-menu-toggle>
-              ☰
-            </button>
+            <button class="site-header__menu-toggle" type="button" aria-label="메뉴 열기" data-menu-toggle></button>
           </div>
         </div>
       </header>
@@ -293,27 +290,31 @@
               <article class="faq-item is-open">
                 <button class="faq-item__button" type="button" aria-expanded="true">
                   YOFI의 서비스는 어떤 기능(혹은 솔루션)을 제공하나요?
-                  <span class="faq-item__icon">⌄</span>
+                  <span class="faq-item__icon" aria-hidden="true"></span>
                 </button>
                 <div class="faq-item__content">
                   <div class="faq-item__content-inner">
                     <p>
-                      TWC는 AI 기반 고객상담 SaaS 서비스를 제공하며, 채팅과 상담 운영을 하나의 화면에서
-                      효율적으로 관리할 수 있도록 지원합니다.
+                      TWC는 AI 기반 고객상담 SaaS 서비스와 컨택센터 통합 상담 솔루션을 제공합니다. 전화·채팅·이메일을
+                      하나의 화면에서 효율적으로 관리할 수 있고, 반복적인 고객 문의는 AI가 자동 응답 처리하여 상담사의
+                      업무 효율을 높여줍니다. 또한 상담 운영 아웃소싱 서비스와 상담 장비 공급까지 토탈 서비스를 제공하고
+                      있습니다.
                     </p>
                   </div>
                 </div>
               </article>
               <article class="faq-item">
                 <button class="faq-item__button" type="button" aria-expanded="false">
-                  "클라우드게이트란 무엇인가요?" 서비스는 어떻게 사용하나요?
-                  <span class="faq-item__icon">⌄</span>
+                  “클라우드게이트”란 무엇인가요? 서비스는 어떻게 사용하나요?
+                  <span class="faq-item__icon" aria-hidden="true"></span>
                 </button>
                 <div class="faq-item__content">
                   <div class="faq-item__content-inner">
                     <p>
-                      다양한 채널로 들어오는 고객 문의를 통합하고, 상담 히스토리를 이어서 관리할 수 있는
-                      고객 상담 솔루션입니다.
+                      “클라우드게이트”는 TWC가 제공하는 통합 고객상담 솔루션입니다. 자사몰이나 스마트스토어와 연동하여
+                      주문/고객 정보를 실시간으로 확인할 수 있으며, 전화·채팅 등의 상담을 하나의 화면에서 관리할 수 있는
+                      옴니채널 지원 기능을 가지고 있습니다. 서비스 사용을 원하시는 경우 홈페이지 문의 양식을 통해 계정
+                      생성 및 사용 신청을 진행할 수 있습니다.
                     </p>
                   </div>
                 </div>
@@ -321,13 +322,14 @@
               <article class="faq-item">
                 <button class="faq-item__button" type="button" aria-expanded="false">
                   BPO 아웃소싱은 어떤 경우에 적합한가요?
-                  <span class="faq-item__icon">⌄</span>
+                  <span class="faq-item__icon" aria-hidden="true"></span>
                 </button>
                 <div class="faq-item__content">
                   <div class="faq-item__content-inner">
                     <p>
-                      직접 상담팀을 운영하기 어려운 기업이나, 특정 시즌에 상담량이 급증하는 브랜드에
-                      적합한 운영 대행 서비스입니다.
+                      BPO 상담 운영 아웃소싱 서비스는 외부 전문 상담사를 활용해 고객 상담을 효율적으로 운영하고 싶을 때
+                      적합합니다. 내부 상담 인력을 늘리기 어려운 경우, 혹은 비용 부담을 줄이면서도 전문적으로 고객 응대를
+                      진행하고 싶은 기업에게 추천됩니다. 기업 규모(소규모~대규모) 맞춤형 플랜도 제공됩니다.
                     </p>
                   </div>
                 </div>
@@ -335,13 +337,14 @@
               <article class="faq-item">
                 <button class="faq-item__button" type="button" aria-expanded="false">
                   상담 장비(자브라 등)는 별도로 구매해야 하나요?
-                  <span class="faq-item__icon">⌄</span>
+                  <span class="faq-item__icon" aria-hidden="true"></span>
                 </button>
                 <div class="faq-item__content">
                   <div class="faq-item__content-inner">
                     <p>
-                      상담 환경에 맞춘 장비 제안부터 공급까지 함께 검토할 수 있으며, 실제 에셋과 제품군은
-                      추후 교체 가능합니다.
+                      네, 상담 장비(예: 컨택센터용 헤드셋)은 솔루션 이용과 별도로 필요에 따라 구매 또는 공급 요청이
+                      가능합니다. 장비는 전문 상담 환경에서 통화 품질을 높이기 위해 제공되며, 제품 종류 및 옵션은 상담
+                      문의를 통해 안내받을 수 있습니다.
                     </p>
                   </div>
                 </div>
@@ -353,11 +356,21 @@
         <!-- News -->
         <section class="section" id="news">
           <div class="container">
-            <div class="section-heading">
-              <span class="eyebrow">News</span>
+            <div class="news-header">
+              <div class="section-heading">
+                <span class="eyebrow">News</span>
               <p class="type-body text-muted">요피컴퍼니의 새로운 소식을 만나보세요.</p>
+              </div>
+              <div class="news-controls" aria-label="News carousel controls">
+                <button class="news-control news-control--prev" type="button" aria-label="이전 뉴스" data-news-prev>
+                  <span aria-hidden="true"></span>
+                </button>
+                <button class="news-control news-control--next" type="button" aria-label="다음 뉴스" data-news-next>
+                  <span aria-hidden="true"></span>
+                </button>
+              </div>
             </div>
-            <div class="news-grid">
+            <div class="news-grid" data-news-grid>
               <article class="card news-card">
                 <div class="news-card__media">
                   <img src="../assets/images/news/News_01.jpg" alt="디화이트커뮤니케이션 임원 인터뷰">

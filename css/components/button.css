@@ -67,6 +67,19 @@
   box-shadow: none;
 }
 
+.button--hero::after {
+  content: "\2192";
+  display: inline-block;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateX(-4px);
+  transition:
+    max-width 0.2s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
 .button--hero:hover,
 .button--hero:focus-visible {
   background:
@@ -74,4 +87,11 @@
     linear-gradient(90deg, #32bfd7 0%, #934fff 33%, #cb5dd3 95%) border-box;
   box-shadow: none;
   transform: translateY(-1px);
+}
+
+.button--hero:hover::after,
+.button--hero:focus-visible::after {
+  max-width: 1em;
+  opacity: 1;
+  transform: translateX(0);
 }
