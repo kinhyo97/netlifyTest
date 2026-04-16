@@ -177,3 +177,35 @@
     width: 100%;
   }
 }
+
+@media (max-width: 375px) {
+  .news-header {
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    gap: 16px;
+  }
+
+  .news-header .section-heading {
+    gap: 8px;
+  }
+
+  .news-header .type-body {
+    width: 187px;
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+  }
+
+  .news-controls {
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .news-control {
+    width: 48px;
+    height: 48px;
+  }
+}

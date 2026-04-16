@@ -120,3 +120,23 @@ main > section + section {
     margin-top: var(--space-10);
   }
 }
+
+@media (max-width: 375px) {
+  .desktop-guide::before {
+    left: calc((100% - 335px) / 2);
+    width: 335px;
+    background:
+      repeating-linear-gradient(
+        to right,
+        rgba(255, 82, 82, 0.18) 0,
+        rgba(255, 82, 82, 0.18) 10px,
+        rgba(255, 255, 255, 0) 10px,
+        rgba(255, 255, 255, 0) 34px
+      );
+    background-size: 335px 100%;
+  }
+
+  main > section + section {
+    margin-top: 56px;
+  }
+}

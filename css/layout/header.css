@@ -179,3 +179,29 @@
     right: 16px;
   }
 }
+
+@media (max-width: 375px) {
+  .site-header__inner {
+    min-height: 60px;
+    padding: 16px 20px;
+  }
+
+  .site-header__brand img {
+    width: 70px;
+    height: 24px;
+  }
+
+  .site-header__menu-toggle {
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+    background:
+      url("../../assets/images/pictogram/Icon_Menu.svg") center / 20px 20px no-repeat,
+      transparent;
+  }
+
+  .site-header.is-open .site-header__nav {
+    left: 20px;
+    right: 20px;
+  }
+}
