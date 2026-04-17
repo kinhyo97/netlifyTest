@@ -31,10 +31,4 @@
 
 .card-link::after {
   content: "\2192";
-  transition: transform 0.2s ease;
-}
-
-.card:hover .card-link::after,
-.card:focus-within .card-link::after {
-  transform: translateX(4px);
 }

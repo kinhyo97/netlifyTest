@@ -140,6 +140,13 @@
   letter-spacing: -0.025em;
 }
 
+.solution-section__content .button:hover,
+.solution-section__content .button:focus-visible {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  box-shadow: none;
+}
+
 .partners-section .section-heading {
   justify-items: center;
   text-align: center;
