@@ -69,10 +69,6 @@
   border-radius: var(--radius-md);
 }
 
-.service-summary {
-  margin-top: var(--space-12);
-}
-
 .solutions {
   display: grid;
   gap: 120px;
@@ -262,7 +258,7 @@
 
 .security-section {
   padding: 120px 0 120px;
-  background: #1f0003;
+  background: #000000;
   color: var(--color-white);
 }
 
@@ -425,6 +421,23 @@
 }
 
 @media (max-width: 1200px) {
+  .security-certifications {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-content: initial;
+    gap: 12px;
+    margin: 0 0 50px;
+  }
+
+  .security-certifications img {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    justify-self: center;
+  }
+
   .partners-section .section-heading {
     gap: 8px;
     margin-bottom: 50px;
@@ -450,10 +463,10 @@
   }
 
   .security-section .eyebrow {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.4;
-    font-weight: 500;
-    letter-spacing: 0;
+    font-weight: 400;
+    letter-spacing: -0.025em;
   }
 
   .security-section .type-heading-2 {
@@ -533,6 +546,10 @@
 }
 
 @media (max-width: 786px) {
+  .solutions {
+    gap: 80px;
+  }
+
   .solution-section,
   .solution-section:nth-child(even) {
     grid-template-columns: 1fr;
@@ -540,7 +557,7 @@
   }
 
   .home-hero {
-    padding: 88px 0 var(--space-9);
+    padding: 88px 0 0;
   }
 
   .home-hero__copy {
@@ -598,12 +615,29 @@
   }
 
   .security-certifications {
-    gap: 20px;
+    gap: 12px;
   }
 
   .security-certifications img {
-    width: 96px;
-    height: 96px;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .security-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(104px, auto);
+    gap: 6px;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+  }
+
+  .security-item {
+    min-height: 104px;
+    padding: 28px;
+    border-radius: 12px;
   }
 
   .partners-marquee {
@@ -668,10 +702,6 @@
     margin-top: 32px;
   }
 
-  .service-summary {
-    margin-top: 32px;
-  }
-
   .partners-section .section-heading {
     margin-bottom: 24px;
     gap: 8px;
@@ -733,10 +763,10 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.4;
-    font-weight: 500;
-    letter-spacing: 0;
+    font-weight: 400;
+    letter-spacing: -0.025em;
   }
 
   .security-section .type-heading-2 {
@@ -772,19 +802,20 @@
   }
 
   .security-certifications {
-    width: 335px;
+    width: 100%;
     max-width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     justify-content: initial;
-    gap: 0;
+    gap: 12px;
     margin: 0 auto 24px;
   }
 
   .security-certifications img {
     width: 100%;
-    max-width: 111.67px;
-    height: 111.67px;
+    max-width: none;
+    height: auto;
+    aspect-ratio: 1 / 1;
     justify-self: center;
   }
 

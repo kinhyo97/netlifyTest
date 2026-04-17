@@ -129,9 +129,11 @@
     linear-gradient(var(--color-white), var(--color-white)) padding-box,
     linear-gradient(90deg, #32bfd7 0%, #934fff 33%, #cb5dd3 95%) border-box;
   color: var(--color-text);
-  font-size: 13px;
-  line-height: 1;
-  font-weight: 500;
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: -0.025em;
   box-shadow: none;
 }
 
@@ -170,7 +172,9 @@
 
 @media (max-width: 768px) {
   .hero-banner {
-    min-height: 280px;
+    min-height: 480px;
+    display: grid;
+    align-items: center;
   }
 
   .hero-banner__copy {
@@ -178,11 +182,19 @@
     max-width: none;
     padding: 32px 24px;
     gap: 20px;
+    width: 100%;
+    justify-items: center;
+    text-align: center;
     transform: none;
   }
 
   .hero-banner__copy .type-heading-2 {
+    max-width: 100%;
     font-size: 28px;
+  }
+
+  .hero-banner__copy .type-body {
+    max-width: 100%;
   }
 
   .cta-banner {
@@ -297,7 +309,7 @@
     min-height: 45px;
     padding: 12px 16px;
     gap: 10px;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.4;
     font-weight: 400;
     letter-spacing: -0.025em;
