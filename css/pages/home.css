@@ -428,6 +428,10 @@
   color: #505050;
 }
 
+#contact {
+  margin-top: 100px;
+}
+
 @media (max-width: 1200px) {
   .security-certifications {
     width: 100%;
