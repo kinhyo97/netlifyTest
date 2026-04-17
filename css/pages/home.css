@@ -99,13 +99,14 @@
 .solution-section__shot {
   min-height: 480px;
   border-radius: 16px;
-  background: #f8e6f6;
+  background: transparent;
 }
 
 .solution-section__shot img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  object-position: center;
 }
 
 .solution-section__content .type-heading-3 {
@@ -876,7 +877,8 @@
   }
 
   .solution-section__shot img {
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
   }
 
   #blog {

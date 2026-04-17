@@ -6,6 +6,8 @@ export function initHeader() {
     return;
   }
 
+  toggle.setAttribute("aria-expanded", "false");
+
   toggle.addEventListener("click", () => {
     const isOpen = header.classList.toggle("is-open");
     document.body.classList.toggle("is-menu-open", isOpen);
