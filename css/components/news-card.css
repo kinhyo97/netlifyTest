@@ -46,6 +46,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   width: 48px;
   height: 48px;
   border: 1px solid #dcdcdc;
@@ -59,6 +60,9 @@
 }
 
 .news-control span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   display: block;
   width: 12px;
   height: 12px;
@@ -68,11 +72,11 @@
 }
 
 .news-control--prev span {
-  transform: rotate(-135deg);
+  transform: translate(-42%, -50%) rotate(-135deg);
 }
 
 .news-control--next span {
-  transform: rotate(45deg);
+  transform: translate(-58%, -50%) rotate(45deg);
 }
 
 .news-control:hover,

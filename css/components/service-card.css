@@ -36,26 +36,6 @@
   max-height: 48px;
   object-fit: contain;
   object-position: left center;
-  transition: opacity 0.2s ease;
-}
-
-.service-card__brand::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("../../assets/images/confirm_icons/CloudGate_Logo.webp") left center / contain no-repeat;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.service-card:hover .service-card__brand img,
-.service-card:focus-within .service-card__brand img {
-  opacity: 0;
-}
-
-.service-card:hover .service-card__brand::after,
-.service-card:focus-within .service-card__brand::after {
-  opacity: 1;
 }
 
 .service-card__copy {
