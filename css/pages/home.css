@@ -434,6 +434,10 @@
 }
 
 @media (max-width: 1200px) {
+  #news .container {
+    padding-right: 0;
+  }
+
   .security-certifications {
     width: fit-content;
     display: grid;
