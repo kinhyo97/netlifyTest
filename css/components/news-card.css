@@ -176,6 +176,24 @@
   opacity: 1;
 }
 
+@media (hover: none), (pointer: coarse) {
+  .news-control:hover,
+  .news-control:focus-visible {
+    background-color: #ffffff;
+  }
+
+  .news-card:hover,
+  .news-card:focus-within {
+    box-shadow: none;
+    border-color: #f5f5f5;
+  }
+
+  .news-card:hover .news-card__media::before,
+  .news-card:focus-within .news-card__media::before {
+    opacity: 0;
+  }
+}
+
 @media (max-width: 1025px) {
   .news-header {
     align-items: center;
