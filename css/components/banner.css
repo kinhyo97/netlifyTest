@@ -1,3 +1,4 @@
+/* Shared banner shell */
 .hero-banner,
 .cta-banner {
   position: relative;
@@ -5,6 +6,7 @@
   border-radius: var(--radius-md);
 }
 
+/* Main hero banner */
 .hero-banner {
   width: 100%;
   min-height: 480px;
@@ -30,6 +32,7 @@
   transform: translateY(-50%);
 }
 
+/* 모바일에서 보여줄 별도 텍스트를 숨겨두는 설정 */
 .hero-banner__text-mobile {
   display: none;
 }
@@ -79,6 +82,7 @@
   color: var(--color-text);
 }
 
+/* Contact CTA banner */
 .cta-banner {
   min-height: 480px;
   padding: 0 0 111px;
@@ -137,6 +141,7 @@
   box-shadow: none;
 }
 
+/* Tablet and small desktop adjustments */
 @media (max-width: 1200px) {
   .hero-banner {
     min-height: 480px;
@@ -170,6 +175,7 @@
   }
 }
 
+/* Tablet/mobile shared layout */
 @media (max-width: 768px) {
   .hero-banner {
     min-height: 480px;
@@ -215,6 +221,7 @@
   }
 }
 
+/* Small mobile overrides */
 @media (max-width: 375px) {
   .hero-banner {
     min-height: 480px;

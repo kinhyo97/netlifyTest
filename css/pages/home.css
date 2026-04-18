@@ -403,7 +403,7 @@
   gap: 40px;
   min-height: 627px;
   align-content: start;
-  padding-right: 0;
+  padding-right: 20px;
 }
 
 #news .section-heading {

@@ -101,6 +101,16 @@ export function initHomePage() {
   let animationStartTime = 0;
   let animationFrom = 0;
   let animationTo = 0;
+  let isPointerDown = false;
+  let isDragging = false;
+  let activePointerId = null;
+  let dragStartX = 0;
+  let dragStartOffset = 0;
+  let dragDeltaX = 0;
+  let lastPointerX = 0;
+  let lastPointerTime = 0;
+  let pointerVelocity = 0;
+  let suppressClick = false;
 
   const stopAnimation = () => {
     if (animationFrameId) {
@@ -154,6 +164,140 @@ export function initHomePage() {
     animationTo = offset + (step * direction);
     animationFrameId = window.requestAnimationFrame(animateToOffset);
   };
+
+  const snapNewsPosition = () => {
+    const step = getScrollAmount();
+
+    if (step <= 0) {
+      return;
+    }
+
+    const baseIndex = Math.round(offset / step);
+    const dragThreshold = step * 0.18;
+    const flickThreshold = 0.35;
+    const offsetDelta = offset - dragStartOffset;
+    const velocityInOffsetDirection = -pointerVelocity;
+    let targetIndex = baseIndex;
+
+    if (Math.abs(velocityInOffsetDirection) >= flickThreshold) {
+      targetIndex = Math.round(offset / step);
+
+      if (Math.sign(velocityInOffsetDirection) !== 0) {
+        targetIndex += Math.sign(velocityInOffsetDirection);
+      }
+    } else if (Math.abs(offsetDelta) >= dragThreshold) {
+      targetIndex = Math.round(dragStartOffset / step) + Math.sign(offsetDelta);
+    }
+
+    stopAnimation();
+    animationStartTime = 0;
+    animationFrom = offset;
+    animationTo = targetIndex * step;
+    animationFrameId = window.requestAnimationFrame(animateToOffset);
+  };
+
+  const endPointerDrag = () => {
+    if (!isPointerDown) {
+      return;
+    }
+
+    isPointerDown = false;
+
+    if (isDragging) {
+      newsGrid.classList.remove("is-dragging");
+      snapNewsPosition();
+      suppressClick = true;
+      window.setTimeout(() => {
+        suppressClick = false;
+      }, 0);
+    }
+
+    isDragging = false;
+    activePointerId = null;
+  };
+
+  newsGrid.addEventListener("pointerdown", (event) => {
+    if (event.pointerType === "mouse" && event.button !== 0) {
+      return;
+    }
+
+    isPointerDown = true;
+    isDragging = false;
+    activePointerId = event.pointerId;
+    dragStartX = event.clientX;
+    dragStartOffset = offset;
+    dragDeltaX = 0;
+    lastPointerX = event.clientX;
+    lastPointerTime = event.timeStamp;
+    pointerVelocity = 0;
+
+    stopAnimation();
+    newsGrid.setPointerCapture(event.pointerId);
+  });
+
+  newsGrid.addEventListener("pointermove", (event) => {
+    if (!isPointerDown || event.pointerId !== activePointerId) {
+      return;
+    }
+
+    dragDeltaX = event.clientX - dragStartX;
+
+    const elapsed = Math.max(event.timeStamp - lastPointerTime, 1);
+    pointerVelocity = (event.clientX - lastPointerX) / elapsed;
+    lastPointerX = event.clientX;
+    lastPointerTime = event.timeStamp;
+
+    if (!isDragging && Math.abs(dragDeltaX) > 6) {
+      isDragging = true;
+      newsGrid.classList.add("is-dragging");
+    }
+
+    if (!isDragging) {
+      return;
+    }
+
+    event.preventDefault();
+    offset = dragStartOffset - dragDeltaX;
+    applyTrackTransform();
+  });
+
+  newsGrid.addEventListener("pointerup", (event) => {
+    if (event.pointerId !== activePointerId) {
+      return;
+    }
+
+    if (newsGrid.hasPointerCapture(event.pointerId)) {
+      newsGrid.releasePointerCapture(event.pointerId);
+    }
+
+    endPointerDrag();
+  });
+
+  newsGrid.addEventListener("pointercancel", (event) => {
+    if (event.pointerId !== activePointerId) {
+      return;
+    }
+
+    endPointerDrag();
+  });
+
+  newsGrid.addEventListener("lostpointercapture", () => {
+    endPointerDrag();
+  });
+
+  newsGrid.addEventListener(
+    "click",
+    (event) => {
+      if (!suppressClick) {
+        return;
+      }
+
+      event.preventDefault();
+      event.stopPropagation();
+      suppressClick = false;
+    },
+    true,
+  );
 
   prevButton.addEventListener("click", () => {
     moveNewsByStep(-1);
