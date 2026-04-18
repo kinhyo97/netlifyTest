@@ -1,9 +1,10 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "rewrites": [
     {
       "source": "/",
-      "destination": "/html/index.html"
+      "destination": "/html/index"
     }
   ]
 }
